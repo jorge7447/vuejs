@@ -13,7 +13,7 @@ export async function fetchTodos ({commit}) {
     }
 }
 
-export async function addTodos ({commit, dispatch}, todo) {
+export async function addTodo ({commit, dispatch}, todo) {
     try {
         await Vue.axios({
             method: 'POST',
