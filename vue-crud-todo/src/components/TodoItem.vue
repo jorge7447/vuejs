@@ -37,12 +37,12 @@
                 _updteTodoStatus: 'todos/updateTodoStatus',
                 _removeTodo: 'todos/removeTodo'
             }),
-            ...mapMutations('todos', 'setTodo'),
+            ...mapMutations('todos', ['setTodo']),
             goToUpdateTodo () {
                 this.setTodo(this.todo)
                 this.$router.push({
                     name: 'todos-update',
-                    params: {id: todo.id}
+                    params: {id: this.todo.id}
                 })
             },
             updateTodoStatus () {

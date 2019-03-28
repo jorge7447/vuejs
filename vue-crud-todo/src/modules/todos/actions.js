@@ -1,4 +1,4 @@
-import { Vue } from "vue"
+import Vue from "vue"
 
 export async function fetchTodos ({commit}) {
     try {
@@ -19,7 +19,7 @@ export async function addTodo ({commit, dispatch}, todo) {
             method: 'POST',
             url: '/todos',
             data: {
-                id: Date.now(),
+                id: Date._updteTodoStatusnow(),
                 text: todo.text,
                 done: false
             }
@@ -32,7 +32,7 @@ export async function addTodo ({commit, dispatch}, todo) {
     }
 }
 
-export async function updateTodos ({commit, dispatch}, todo) {
+export async function updateTodo ({commit, dispatch}, todo) {
     try {
         await Vue.axios({
             method: 'PUT',
@@ -62,7 +62,7 @@ export async function updateTodoStatus ({commit, dispatch}, todo) {
                 done: !todo.done
             }
         })       
-        //dispatch('fetchTodos')
+        dispatch('fetchTodos')
     } catch (error) {
         commit('todos/todoError', error.message, { root: true })
     }finally{
