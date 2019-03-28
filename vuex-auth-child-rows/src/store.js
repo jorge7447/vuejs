@@ -1,26 +1,25 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import localForage from "localforage"
+import auth from '@/modules/authentication'
 import VuexPersistence from 'vuex-persist'
-
 Vue.use(Vuex)
 
 const vuexLocal = new VuexPersistence({
-  //storage: window.localStorage,
-  storage: localForage,
-  modules: ['cart']
+  storage: window.localStorage,
+  modules: ['auth']
 })
-
-import products from './modules/products'
-import cart from './modules/cart'
 
 export default new Vuex.Store({
   state: {
-
+    loading: false
+  },
+  mutations: {
+    setLoading(state, bool){
+      state.loading = bool
+    }
   },
   modules: {
-    products,
-    cart
+    auth
   },
   plugins: [vuexLocal.plugin]
 })
