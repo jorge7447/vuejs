@@ -5,5 +5,39 @@
       "text": "Todo 2",
       "done": false
     }
+  ],
+  "activities_subscriptions": [
+    {
+      "terms": true,
+      "personal_data": {
+        "name": "jorge",
+        "surname": "Sandoval"
+      },
+      "activity_type_selection": {
+        "type": 2,
+        "date": "2019-03-29"
+      },
+      "activity_selected_data": {
+        "team": "JESV",
+        "information": "NNNNNnnnnnnn"
+      },
+      "id": 1
+    },
+    {
+      "terms": true,
+      "personal_data": {
+        "name": "jorge",
+        "surname": "Sandoval"
+      },
+      "activity_type_selection": {
+        "type": 1,
+        "date": "2019-03-29"
+      },
+      "activity_selected_data": {
+        "team": "JESV",
+        "information": "NNNNNnnnnnnn"
+      },
+      "id": 2
+    }
   ]
 }
